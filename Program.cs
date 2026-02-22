@@ -42,7 +42,7 @@ else if (dolor < 0 || dolor > 10)
     Console.WriteLine("ERROR FUERA DE RANGO");
 }
 
-else if (sistolica < 50 || dolor > 250)
+else if (sistolica < 50 || sistolica > 250)
 {
     Console.WriteLine("ERROR FUERA DE RANGO");
 }
@@ -57,41 +57,97 @@ else
     {
         case 1:
 
-           
+            if (oxigeno < 90)
+            {
+                prioridad = "Prioridad 1";
+                accion = "Reanimación inmediata";
+            }
 
-                break;
+            else
+            {
+                if (temperatura >= 39 && dolor >= 8)
+                {
+                    prioridad = "Prioridad 2";
+                    accion = "Atencion urgente ";
+                }
+
+                else
+                {
+                    prioridad = "Prioridad 3";
+                    accion = "Observación";
+                }
+
+
+
+            }
+
+            break;
         case 2:
 
-           
-                break;
+            if (dolor <= 4)
+            {
+                prioridad = "Prioridad baja";
+                accion = "Consulta normal";
+
+            }
+
+            else
+            {
+                prioridad = "Media";
+                accion = "Evaluación médica";
+            }
+
+            break;
 
 
         case 3:
 
-            
+            if (edad < 12)
+            {
+                if (temperatura > 38.5)
+                {
+                    prioridad = "Prioridad alta";
+                    accion = "Atención medica inmediata";
+                }
+                else
+                {
+                    prioridad = "Prioridad normal";
+                    accion = "Consulta pedriatica";
+                }
+            }
+            else
+            {
+                prioridad = "Derivar a consulta general";
+                accion = "No corresponde pediatría";
+            }
 
 
-                break;
+            break;
 
         case 4:
 
-           
+            if (dolor >= 7)
+            {
+                prioridad = "Prioridad alta";
+                accion = "Radiografia y atencion urgente!!";
+            }
+            else
+            {
+                prioridad = "Prioridad media";
+                accion = "Evaluación  traumatologica!!";
+            }
 
-                break;
+            break;
 
 
         default:
             Console.WriteLine("Opción ingresada incorrecta");
             break;
-
-
-           
-
-
     }
 
-
-
+    Console.WriteLine("RESULTADOS!!!");
+    Console.WriteLine("Prioridad: " + prioridad);
+    Console.WriteLine("Accion: " + accion);
 
 }
 
